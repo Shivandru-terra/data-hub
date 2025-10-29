@@ -1,0 +1,73 @@
+# ─────────────────────────────
+# Python
+# ─────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.so
+*.egg
+*.egg-info/
+.eggs/
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.env
+.venv
+venv/
+ENV/
+env/
+*.env
+
+# Poetry virtualenvs
+# (optional — if you’re using Poetry-managed env outside project)
+.poetry/
+
+# ─────────────────────────────
+# IDE / Editor files
+# ─────────────────────────────
+.vscode/
+.idea/
+*.swp
+
+# ─────────────────────────────
+# OS files
+# ─────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ─────────────────────────────
+# Logs and temp
+# ─────────────────────────────
+*.log
+*.tmp
+*.bak
+*.cache
+.cache/
+__pycache__/
+
+# ─────────────────────────────
+# Build artifacts
+# ─────────────────────────────
+build/
+dist/
+*.egg-info/
+*.spec
+
+# ─────────────────────────────
+# Pytest / Coverage
+# ─────────────────────────────
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+
+# ─────────────────────────────
+# Misc
+# ─────────────────────────────
+poetry.lock  # optional — keep if you don’t want to lock dependencies in git

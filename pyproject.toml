@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "data-hub"
+version = "0.1.0"
+description = ""
+authors = ["Shivandru-terra <shivandru@letsterra.com>"]
+readme = "README.md"
+packages = [{ include = "app" }]
+
+[tool.poetry.dependencies]
+python = ">=3.13"
+fastapi = "^0.120.1"
+uvicorn = { version = "^0.38.0", extras = ["standard"] }
+python-dotenv = "^1.2.1"
+
+[tool.poetry.scripts]
+data-hub = "app.main:start"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
