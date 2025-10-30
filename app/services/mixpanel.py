@@ -7,7 +7,11 @@ load_dotenv()
 
 class MixPanelServices:
     URL = "https://data.mixpanel.com/api/2.0/export"
-    MIXPANEL_API_KEY = os.getenv("MIXPANEL_API_SECRET_RIPPLE")
+    platform = os.getenv("PLATFORM")
+    if platform == "Ripple":
+        MIXPANEL_API_KEY = os.getenv("MIXPANEL_API_SECRET_RIPPLE")
+    else:
+        MIXPANEL_API_KEY = os.getenv("MIXPANEL_API_SECRET_TERRA")
     def __init__(self):
         if not self.MIXPANEL_API_KEY:
             raise ValueError("MIXPANEL_API_KEY is not set")

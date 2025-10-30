@@ -6,8 +6,8 @@ from app.services.mixpanel import mixPanelServices
 import math
 # import re
 class BigQueryServices:
-    TOP_LEVEL_FIELDS = ["dataset", "time", "distinct_id", "name"]
-    PROPERTIES_FIELDS = [
+    TOP_LEVEL_FIELDS_RIPPLE = ["dataset", "time", "distinct_id", "name"]
+    PROPERTIES_FIELDS_RIPPLE = [
         "mp_processing_time_ms",
         "mp_lib",
         "username",
@@ -57,7 +57,7 @@ class BigQueryServices:
         "timeSpent",
         "game_values",
     ]
-    GAME_VALUES_SCHEMA = {
+    GAME_VALUES_SCHEMA_RIPPLE = {
         "aicrazygirlfriend": [
             "Conversation_Delta_Alertness",
             "Conversation_Delta_Trust",
@@ -235,15 +235,15 @@ class BigQueryServices:
                 converted = self.to_utc_iso(val)
                 val = converted
 
-            if clean_key in self.PROPERTIES_FIELDS:
+            if clean_key in self.PROPERTIES_FIELDS_RIPPLE:
                 properties[clean_key] = val
-            elif clean_key in self.TOP_LEVEL_FIELDS:
+            elif clean_key in self.TOP_LEVEL_FIELDS_RIPPLE:
                 cleaned_row[clean_key] = val
 
         # Handle game_values
         game_name = properties.get("gameName")
-        if game_name and game_name in self.GAME_VALUES_SCHEMA:
-            for gv_key in self.GAME_VALUES_SCHEMA[game_name]:
+        if game_name and game_name in self.GAME_VALUES_SCHEMA_RIPPLE:
+            for gv_key in self.GAME_VALUES_SCHEMA_RIPPLE[game_name]:
                 if gv_key in props and props[gv_key] != "":
                     game_values[gv_key] = props[gv_key]
 
