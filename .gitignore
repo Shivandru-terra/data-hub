@@ -24,6 +24,10 @@ ENV/
 env/
 *.env
 
+# Google Secret Key
+
+.service-account.json
+
 # Poetry virtualenvs
 # (optional — if you’re using Poetry-managed env outside project)
 .poetry/
